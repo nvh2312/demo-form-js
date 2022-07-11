@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="title text-center">
+            <span class="color-blue">Fluent Forms Template Library</span>
+            <h1>Patient Intake Form Template</h1>
+            <p>Take this form to investigate your patient before admission</p>
+        </div>
+
+        <div class="part-form">
+            <div class="head-form row justify-content-between">
+                <h2>Patient Intake Form</h2>
+                <div class="btn-download">
+                    <a class="download" href="">Download</a>
+                </div>
+            </div>
+            <div class="content">
+                <form id="frm1" onsubmit="return kiemtra()">
+                    <div class="row">
+                        <div class="col">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName">
+                        </div>
+                        <div class="col">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                    </div>
+                    <div class="form-group star">
+                        <label for="age">Patient Age</label>
+                        <input type="number" class="form-control" id="age" name="quantity" onblur="return kt()">
+                        <div class="error-text" id="1">This field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nickName">Prefered Name / Nickname</label>
+                        <input type="text" class="form-control" id="nickName">
+                    </div>
+                    <div class="form-group star">
+                        <label for="gender">Patient Gender</label>
+                        <select class="form-control" id="gender" onblur="return kt()">
+                            <option>- Select -</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                        <div class="error-text" id="2">This field is required</div>
+                    </div>
+
+                    <div class="form-group star">
+                        <label for="phone">Phone no.</label>
+                        <input type="number" class="form-control" id="phone" name="sdt" onblur="return kt()">
+                        <div class="error-text" id="3">This field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="spouceName">Spouce Name</label>
+                        <input type="text" class="form-control" id="spouceName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="liveWith">With whome do you live?</label>
+                        <input type="text" class="form-control" id="liveWith">
+                    </div>
+                    <div class="form-group star">
+                        <label for="form-check">Marital Status</label>
+                        <div class="form-check" id="lb11">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="married" value="option1">
+                            <label class="form-check-label" for="married">
+                                Married
+                            </label>
+                        </div>
+                        <div class="form-check" id="lb12">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="unmarried"
+                                value="option2">
+                            <label class="form-check-label" for="unmarried">
+                                Unmarried
+                            </label>
+                        </div>
+                        <div class="form-check" id="lb13">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="other" value="option3">
+                            <label class="form-check-label" for="other">
+                                other
+                            </label>
+                        </div>
+                        <div class="error-text" id="4">This field is required</div>
+                    </div>
+                    <div class="form-group star" id="statusOther">
+                        <label for="otherStatus">Marital status(other)</label>
+                        <input type="text" class="form-control" id="otherStatus" onblur="return kt()">
+                        <div class="error-text" id="5">This field is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" class="form-control" id="occupation"
+                            placeholder="If retired or disabled enter your last occupation">
+                    </div>
+                    <div class="form-group star">
+                        <label for="exampleFormControlInput1">Retired?</label>
+                        <div class="form-check" id="lb21">
+                            <input class="form-check-input" type="radio" name="gridRadios1" id="yes" value="option1">
+                            <label class="form-check-label" for="yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check" id="lb22">
+                            <input class="form-check-input" type="radio" name="gridRadios1" id="no" value="option2">
+                            <label class="form-check-label" for="no">
+                                No
+                            </label>
+                        </div>
+                        <div class="error-text" id="6">This field is required</div>
+                    </div>
+                    <div class="form-group " id="dateRetired">
+                        <label for="date">Date of retirement</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <div class="form-group star">
+                        <label for="exampleFormControlInput1">Disability ?</label>
+                        <div class="form-check" id="lb31">
+                            <input class="form-check-input" type="radio" name="gridRadios2" id="yes1" value="option1">
+                            <label class="form-check-label" for="yes1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check" id="lb32">
+                            <input class="form-check-input" type="radio" name="gridRadios2" id="no1" value="option2">
+                            <label class="form-check-label" for="no1">
+                                No
+                            </label>
+                        </div>
+                        <div class="error-text" id="7">This field is required</div>
+                    </div>
+                    <div class="form-group " id="dateDis">
+                        <label for="date">Date of disability</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorName">Who is your primary care doctor:</label>
+                        <input type="text" class="form-control" id="doctorName">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorLive">Where is your primary care doctor located ?</label>
+                        <input type="text" class="form-control" id="doctorLive">
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorPhone">Phone Number of primary care doctor:</label>
+                        <input type="text" class="form-control" id="doctorPhone">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">allergic to any medications</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios3" id="yes2" value="option1">
+                            <label class="form-check-label" for="yes2">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios3" id="no2" value="option2">
+                            <label class="form-check-label" for="no2">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group" id="anyAllergics">
+                        <label for="allergic">allergic to any medications</label>
+                        <input type="text" class="form-control" id="anyAllergic">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Do you smoke?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios4" id="yes3" value="option1">
+                            <label class="form-check-label" for="yes3">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gridRadios4" id="no3" value="option2">
+                            <label class="form-check-label" for="no3">
+                                No
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group" id="timeSmokes">
+                        <label for="allergic">How many years did you smoke?</label>
+                        <input type="text" class="form-control" id="timeSmoke">
+                    </div>
+                    <div class="form-group">
+                        <label for="stop">If you quit, when did you stop?</label>
+                        <input type="text" class="form-control" id="stop">
+                    </div>
+                    <div class="form-group">
+                        <label for="alcohol">Do you drink alcohol?</label>
+                        <input type="text" class="form-control" id="alcohol">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Personal opinion</label>
+                        <textarea class="form-control" id="area-form" name="message" style=" height:100px;"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-shadow" type="submit">Submit
+                        Form</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
